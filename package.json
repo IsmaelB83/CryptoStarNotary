@@ -1,0 +1,28 @@
+{
+  "name": "starnotary",
+  "version": "1.0.0",
+  "description": "DApp to register and trader with stars",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsmaelB83/StarNotary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsmaelB83/StarNotary/issues"
+  },
+  "homepage": "https://github.com/IsmaelB83/StarNotary#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.13",
+    "dotenv": "^16.0.1",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
