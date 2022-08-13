@@ -24,46 +24,23 @@ const App = {
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
 
-    // Current name of the star
-      this.starNameFunc();
     } catch (error) {
       console.error("Could not connect to contract or chain.");
     }
-  },
-
-  starOwnerFunc: async function() {
-    const { starOwner } = this.meta.methods;
-    const owner = await starOwner().call();
-    document.getElementById("owner").innerHTML = owner;
-  },
-
-  starNameFunc: async function() {
-    const { starName } = this.meta.methods;
-    const name = await starName().call();
-    document.getElementById("name").innerHTML = name;
-  },
-
-  starSetNameFunc: async function() {
-    const { changeName } = this.meta.methods;
-    const newName = document.getElementById('newName').value
-    const aux = await changeName(newName).send({ from: this.account });
-    console.log(aux);
-    // Current name of the star
-    this.starNameFunc();
-  },
-
-  claimStarFunc: async function() {
-    this.setStatus("Initiating transaction... (please wait)");
-    const { claimStar } = this.meta.methods;
-    await claimStar().send({ from: this.account });
-    this.setStatus("Transaction complete!");
-    this.starOwnerFunc();
   },
 
   setStatus: function(message) {
     const status = document.getElementById("status");
     status.innerHTML = message;
   },
+
+  createStar: async function() {
+    const { createStar } = this.meta.methods;
+    const name = document.getElementById("starName").value;
+    const id = document.getElementById("starId").value;
+    await createStar(name, id).send({from: this.account});
+    App.setStatus("New Star Owner is " + this.account + ".");
+  }
 };
 
 window.App = App;
