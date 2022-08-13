@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/IsmaelB83/StarNotary#readme",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
     "@truffle/hdwallet-provider": "^2.0.13",
     "dotenv": "^16.0.1",
     "truffle-hdwallet-provider": "^1.0.17"
